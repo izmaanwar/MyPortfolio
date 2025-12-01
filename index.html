@@ -196,5 +196,28 @@
 </body>
 
 <script src="index.js""></script>
+ <script>
+        const titles = [
+            "Full Stack Developer.",
+            "Web Developer.",
+            "Web Solutions Provider.",
+            "Software Engineer.",
+            "Frontend & Backend Specialist."
+        ];
 
+        let index = 0;
+
+        function rotateTitle() {
+            const titleElement = document.getElementById("job-rotator");
+            titleElement.style.opacity = 0;
+
+            setTimeout(() => {
+                index = (index + 1) % titles.length;
+                titleElement.innerText = titles[index];
+                titleElement.style.opacity = 1;
+            }, 400);
+        }
+
+        setInterval(rotateTitle, 3000); // every 3 seconds
+    </script>
 </html>
